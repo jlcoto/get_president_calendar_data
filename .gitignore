@@ -1,0 +1,14 @@
+/logs/
+/airflow.db
+/airflow.cfg
+/unittests.cfg
+/airflow-webserver.pid
+/pgdata
+
+*/__pycache__
+*/lib
+.env
+.venv
+.vscode
+__pycache__
+.pytest_cache
