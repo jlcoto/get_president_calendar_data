@@ -1,9 +1,12 @@
 import datetime as dt
+import os
+
+from dotenv import load_dotenv
 
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 
-from get_calendar_data import get_calendar_data
+from upload_visitors_data import upload_visitors_data
 
 default_args = {
     'owner': 'me',
@@ -17,7 +20,7 @@ with DAG('get_president_agenda',
          schedule_interval='0 * * * *',
          ) as dag:
 
-    get_calendar_data = PythonOperator(task_id='get_calendar_data',
-                                       python_callable=get_calendar_data,
+    get_calendar_data = PythonOperator(task_id='upload_visitors_data',
+                                       python_callable=upload_visitors_data,
                                        provide_context=True,
                                        )
